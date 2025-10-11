@@ -1,0 +1,132 @@
+/* ---- Base ---- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #fcfbfb;              /* body bg */
+  color: #1f2937;                         /* texto base */
+}
+
+/* Contenedor general: max-width + centrado */
+#content {
+  max-width: 1600px;      /* requisito */
+  margin: 0 auto;         /* centrado */
+}
+
+/* ---- Header / Nav ---- */
+header {
+  background-color: rgba(20,30,13,.7);    /* ejemplo sugerido */
+  padding: 10px 16px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo { width: 80px; }                    /* requisito: 80px */
+
+nav { display: flex; gap: 14px; flex-wrap: wrap; }
+nav a {
+  text-align: center;                     /* centrado requerido */
+  color: #fcfbfb;                         /* foreground */
+  text-decoration: none;                  /* sin subrayado */
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+nav a:hover {
+  background-color: #000;                 /* hover bg */
+  color: #d9c2a3;                         /* hover text */
+}
+
+/* ---- Hero ---- */
+#hero { position: relative; }
+#hero-box { overflow: hidden; }
+#hero-img {
+  width: 100%;                            /* requisito: 100% */
+  height: auto;
+  display: block;
+}
+#hero-msg { 
+  position: absolute; inset: 0; 
+  display: grid; place-items: center; 
+  text-align: center; 
+}
+#hero-msg h1, #hero-msg h4 {              /* centrado requerido */
+  margin: 0 0 8px;
+}
+.home-title { color: #000; }              /* foreground */
+h4 { color: #000; }
+
+.button-box { text-align: center; }       /* centrado requerido */
+.book, .join {
+  background-color: #a43312;              /* botones bg */
+  color: #fff;                            /* botones texto */
+  text-decoration: none;                  /* sin subrayado */
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-block;
+}
+.book:hover, .join:hover {
+  background-color: #6f1f0b;              /* botones hover bg */
+  color: #fff;                            /* botones hover texto */
+}
+
+/* ---- Grid principal ---- */
+main { padding: 16px; }
+main section { text-align: center; }      /* centrado requerido */
+
+.card-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+.icon { width: 80px; }                    /* requisito: 80px */
+
+/* ---- Fondo de mensaje: div vacío ---- */
+#background {
+  height: 725px;                          /* requisito */
+  background-color: #d9c2a3;              /* ejemplo de bg */
+  margin: 12px 0;
+}
+
+/* ---- Imagen montañas ---- */
+.mountains {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+/* ---- Bloque de mensaje ---- */
+.msg {
+  background-color: rgba(20,30,13,.7);    /* bg */
+  color: #fff;                            /* texto general */
+  padding: 14px 10px;
+}
+.msg h2 { color: #fff; }                  /* foreground */
+.msg p  { color: #e9e9e9; }               /* foreground secundaria */
+
+/* ---- Footer ---- */
+footer {
+  background-color: #3f4a3c;              /* bg */
+  color: #fcfbfb;                         /* texto */
+  padding: 16px 10px;
+}
+footer p { 
+  margin: 6px 0; 
+  font-size: 1.2em;                       /* tamaño mayor requerido */
+}
+footer a {
+  color: #fcfbfb; 
+  text-decoration: none;                  /* sin subrayado */
+}
+footer p a:hover { text-decoration: underline; }  /* subrayado hover requerido */
+
+footer .social { margin-top: 8px; display: flex; gap: 10px; }
+footer .social img { width: 24px; height: 24px; display: block; }
