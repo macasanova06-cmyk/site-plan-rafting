@@ -1,25 +1,41 @@
-/* ---- Base ---- */
+/* =========================
+   1) FUENTES (Google Fonts)
+   - Cambia estas dos líneas si elegiste otras
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');   /* cuerpo */
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');                  /* titulares */
+
+/* =========================
+   2) RESET SIMPLE
+   ========================= */
 *,
 *::before,
 *::after { box-sizing: border-box; }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;                 /* reset requerido */
+  padding: 0;                /* reset requerido */
+  font-family: Raleway, Arial, sans-serif;   /* cuerpo con fallback */
+  font-size: 22px;           /* tamaño base requerido */
   line-height: 1.5;
-  background-color: #fcfbfb;              /* body bg */
-  color: #1f2937;                         /* texto base */
+  background-color: #fcfbfb;
+  color: #1f2937;
 }
+h2 { margin: 0; }            /* reset requerido */
 
-/* Contenedor general: max-width + centrado */
+/* =========================
+   3) CONTENEDOR
+   ========================= */
 #content {
-  max-width: 1600px;      /* requisito */
-  margin: 0 auto;         /* centrado */
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-/* ---- Header / Nav ---- */
+/* =========================
+   4) HEADER / NAV
+   ========================= */
 header {
-  background-color: rgba(20,30,13,.7);    /* ejemplo sugerido */
+  background-color: rgba(20,30,13,.7);
   padding: 10px 16px;
   display: grid;
   grid-template-columns: 140px 1fr;
@@ -27,27 +43,31 @@ header {
   gap: 12px;
 }
 
-.logo { width: 80px; }                    /* requisito: 80px */
+#logo_link { padding-top: 5px; }           /* padding pedido */
+.logo { width: 80px; }
 
 nav { display: flex; gap: 14px; flex-wrap: wrap; }
 nav a {
-  text-align: center;                     /* centrado requerido */
-  color: #fcfbfb;                         /* foreground */
-  text-decoration: none;                  /* sin subrayado */
-  padding: 8px 10px;
+  text-align: center;
+  color: #fcfbfb;
+  text-decoration: none;
+  /* padding original sustituido por el de la actividad */
+  padding: 35px;                            /* padding pedido */
   border-radius: 8px;
   font-weight: 600;
 }
 nav a:hover {
-  background-color: #000;                 /* hover bg */
-  color: #d9c2a3;                         /* hover text */
+  background-color: #000;
+  color: #d9c2a3;
 }
 
-/* ---- Hero ---- */
+/* =========================
+   5) HERO
+   ========================= */
 #hero { position: relative; }
 #hero-box { overflow: hidden; }
 #hero-img {
-  width: 100%;                            /* requisito: 100% */
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -56,46 +76,85 @@ nav a:hover {
   display: grid; place-items: center; 
   text-align: center; 
 }
-#hero-msg h1, #hero-msg h4 {              /* centrado requerido */
-  margin: 0 0 8px;
+#hero-msg h1, #hero-msg h4 { margin: 0 0 8px; }
+
+/* Titular principal con fuente de titulares */
+.home-title {
+  font-family: 'Rock Salt', 'Bradley Hand', cursive, sans-serif;  /* titulares + fallbacks */
+  font-size: 2em;                         /* 2x del body */
+  color: #000;
+  margin-top: 10px;                       /* margen pedido */
 }
-.home-title { color: #000; }              /* foreground */
 h4 { color: #000; }
 
-.button-box { text-align: center; }       /* centrado requerido */
+/* =========================
+   6) BOTONES
+   ========================= */
+.button-box { text-align: center; }
 .book, .join {
-  background-color: #a43312;              /* botones bg */
-  color: #fff;                            /* botones texto */
-  text-decoration: none;                  /* sin subrayado */
-  padding: 10px 18px;
-  border-radius: 999px;
+  background-color: #a43312;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;                        /* tamaño pedido */
+  padding: 15px 30px;                     /* padding pedido */
+  margin-top: 50px;                       /* margen pedido */
+  border-radius: 5px;                      /* radius pedido */
   font-weight: 700;
   display: inline-block;
 }
 .book:hover, .join:hover {
-  background-color: #6f1f0b;              /* botones hover bg */
-  color: #fff;                            /* botones hover text */
+  background-color: #6f1f0b;
+  color: #fff;
 }
 
-/* ---- Grid principal ---- */
+/* =========================
+   7) GRID PRINCIPAL / CARDS
+   ========================= */
 main { padding: 16px; }
-main section { text-align: center; }      /* centrado requerido */
+main section { text-align: center; }
 
 .card-img {
   width: 100%;
   max-width: 520px;
   height: auto;
+  border: 10px solid #d9c2a3;            /* borde pedido (puedes cambiar color) */
 }
-.icon { width: 80px; }                    /* requisito: 80px */
+main section img { box-sizing: border-box; } /* solicitado */
 
-/* ---- Fondo de mensaje: div vacío ---- */
+.icon { width: 80px; padding-top: 10px; }     /* padding pedido */
+
+/* =========================
+   8) FONDO MENSAJE
+   ========================= */
 #background {
-  height: 725px;                          /* requisito */
-  background-color: #d9c2a3;              /* ejemplo de bg */
+  height: 725px;
+  background-color: #d9c2a3;
   margin: 12px 0;
 }
 
-/* ---- Imagen montañas ---- */
+/* =========================
+   9) BLOQUE MENSAJE (.msg)
+   ========================= */
+.msg {
+  background-color: rgba(20,30,13,.7);
+  color: #fff;
+  padding: 35px;                       /* padding pedido */
+  line-height: 1.5em;                  /* interlineado pedido */
+}
+.msg h2 {
+  font-family: 'Rock Salt', 'Bradley Hand', cursive, sans-serif;  /* titulares */
+  color: #fff;
+}
+.msg p  { 
+  color: #e9e9e9; 
+  font-size: .8em;                     /* tamaño pedido */
+  padding-bottom: 15px;                /* padding pedido */
+}
+
+/* =========================
+   10) MÁRGENES ADICIONALES
+   ========================= */
+.rivers-card, .camping-card, .rapids-card { margin: 200px 0; }  /* si existen en tu HTML */
 .mountains {
   width: 100%;
   max-width: 1200px;
@@ -103,30 +162,23 @@ main section { text-align: center; }      /* centrado requerido */
   margin: 0 auto 12px;
 }
 
-/* ---- Bloque de mensaje ---- */
-.msg {
-  background-color: rgba(20,30,13,.7);    /* bg */
-  color: #fff;                            /* texto general */
-  padding: 14px 10px;
-}
-.msg h2 { color: #fff; }                  /* foreground */
-.msg p  { color: #e9e9e9; }               /* foreground secundaria */
-
-/* ---- Footer ---- */
+/* =========================
+   11) FOOTER
+   ========================= */
 footer {
-  background-color: #3f4a3c;              /* bg */
-  color: #fcfbfb;                         /* texto */
-  padding: 16px 10px;
+  background-color: #3f4a3c;
+  color: #fcfbfb;
+  padding: 25px 50px;                 /* padding pedido */
+  margin-top: 200px;                  /* margen pedido */
 }
 footer p { 
   margin: 6px 0; 
-  font-size: 1.2em;                       /* tamaño mayor requerido */
+  font-size: 1.2em;
 }
 footer a {
-  color: #fcfbfb; 
-  text-decoration: none;                  /* sin subrayado */
+  color: #fcfbfb;
+  text-decoration: none;
 }
-footer p a:hover { text-decoration: underline; }  /* subrayado hover requerido */
-
+footer p a:hover { text-decoration: underline; }
 footer .social { margin-top: 8px; display: flex; gap: 10px; }
-footer .social img { width: 24px; height: 24px; display: block; }
+footer .social img { width: 24px; height: 24px; display: block; padding-top: 15px; }
